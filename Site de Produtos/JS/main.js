@@ -2,6 +2,8 @@ const API_URL = "https://dummyjson.com/products"
 
 let listaProdutos = []
 
+// Criando uma variável com atributos novos e adicionando um local que armazena os itens como favoritos
+
 let favoritos =
     JSON.parse(
         localStorage.getItem("favoritos")
@@ -40,6 +42,8 @@ async function carregarProdutos() {
         console.error(erro)
     }
 }
+
+// Mostrando o produto que tem na lista, pegando ele e mostrando todos seus dados na pesquisa, atribuindo até a parte de favoritar e carrinho
 
 function renderProdutos(lista) {
 
@@ -101,6 +105,10 @@ function renderProdutos(lista) {
         `
     })
 }
+
+// Escreveu com letra pequena na caixa de pesquisa, e ele mostra o produto mesmo assim,
+// ou se tiver mais de um produto com a mesma palavra, ele mostra todos os produtos relacionados a palavra
+// e se não tiver nenhum produto relacionado a palavra, ele mostra uma tela vazia sem produtos
 
 document
     .getElementById("busca")
@@ -188,6 +196,8 @@ function adicionarCarrinho(id) {
 
     renderCarrinho()
 }
+
+// Soma total de tudo do carrinho por produto individual adicionado, e muda o texto ali também, adicionei um extra
 
 function renderCarrinho() {
 
